@@ -1,3 +1,6 @@
+By The Book – A Personal Book Library Website
+Created by Dotan Hilleך
+
 I'm Dotan Hillel, and By The Book is my first full website project. This website organizes all the books I have read, and many more. It includes summaries, reviews, jokes,
 quizzes, and recommendations. I’m building this project because I love books, and I love helping people discover new ones.
 There’s something special about giving someone a book and watching them fall into it with no way to stop reading.
