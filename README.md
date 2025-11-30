@@ -19,11 +19,11 @@ This project features:
 - Clean, HTML structure: Clear files, organized folders, and readable code.
 _______________________________________________________________________________________________________________________________________________________________
 Project Structure:
-|- HTML Files
-|- Pictures
-|- Book List
-|- Statistics
-|- README.md
+- |- HTML Files
+- |- Pictures
+- |- Book List
+- |- Statistics
+- |- README.md
 
 How to Run the Website:
 1. Download or clone the repository
