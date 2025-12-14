@@ -1,0 +1,20 @@
+name: Deploy to Neocities
+
+on:
+  push:
+    branches:
+      - main # ודא שזהו שם הענף הראשי שלך
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v1 
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }} 
+          cleanup: true 
+          dist_dir: . # נקודה (.) אם קבצי האתר הראשיים שלך הם בשורש הרפוזיטורי
