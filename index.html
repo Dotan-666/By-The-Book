@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html lang=En dir=ltr>
   <head>
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="favicon.png">
     <title>By The Book</title>
   </head>
-  <body>
+  <body bgcolor=#941C04>
     <table border=0 width=100% cellspacing=0>
       <tr bgcolor=#941C04 height=200>
-        <td colspan=6 width=70%><img src='By_The_Book.png'></td>
-        <td width=30%>2</td>
+        <td colspan=6 width=70%><img src="logo.png"></td>
+        <td width=30% style="text-align: center; vertical-align: up; padding: 10px;">
+        <details style="position: relative; display: inline-block; float: right;">
+            <summary style="background-color: #ffffff; 
+            color: white; padding: 10px 20px; border-radius: 5px; 
+            cursor: pointer; margin-bottom: 80px; list-style: none; 
+            font-family: Arial, sans-serif; font-weight: bold; width:auto;
+            align:right;">
+            <img src="gear.png" width=40 height=40>
+            </summary>
+            <div style="position: absolute; top: 100%; 
+                right: 0; background-color: #f9f9f9; min-width: 160px; 
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+                z-index: 9999; border-radius: 5px; padding: 10px;
+                text-align: left; border: 1px solid #cccccc;">
+        
+                <a href="settings.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+				text-decoration: none; margin-bottom: 8px; padding: 5px;">Settings</a>
+                <hr>
+                <a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+				text-decoration: none; margin-bottom: 8px; padding:5px;">Profile</a>
+                <hr>
+                <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
+				text-decoration: none; padding: 5px;">Log out</a>
+           </div>
+        </details> 
+        <br> 
+        <button type="button" style="background-color: #333333; color: white; border: none; padding: 10px 20px; border-radius: 5px;                 
+		width: 120px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">       
+        SIGN UP
+        </button>
+        <br> 
+        <button type="button" style="background-color: #ffffff; color: #333333; border: 1px solid #333333; padding: 10px 20px;                     
+		border-radius: 5px; width: 120px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">
+        SIGN IN
+        </button></td>
       </tr>
-      <tr bgcolor=lightgray height=50>
-        <td width=14%>2</td>
-        <td width=14%>3</td>
-        <td width=14%>4</td>
-        <td width=14%>5</td>
-        <td width=14%>6</td>
-        <td width=14%>7</td>
-        <td width=14%>8</td>
+      <tr bgcolor=lightgray height=50 style="text-align: center; font-weight: bold;">
+        <td width=14%>
+		    <a>Fantasy</a>
+		</td>
+        <td width=14%>
+		    <a>Science-Fiction</a>
+		</td>
+        <td width=14%>
+		    <a>Kids</a>
+		</td>
+        <td width=14%>
+		    <a>Adults</a>
+		</td>
+        <td width=14%>
+		    <a>Teenagers</a>
+		</td>
+        <td width=14%>
+		    <a>Thriller Books</a>
+		</td>
+        <td width=14%>
+		    <a>Search</a>
+		</td>
       </tr>
     </table>
+	<script>
+    window.addEventListener('click', function(e) {
+    const details = document.querySelector('details');
+    
+    if (details.open && !details.contains(e.target)) {
+      details.removeAttribute('open'); 
+    }
+    });
+    </script>
     
     <table border=1 width=100%>
       <tr height=250>
