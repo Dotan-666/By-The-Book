@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title id="rec-title"></title>
+		<link rel="stylesheet" href="book-style.css">
+		<meta charset="UTF-8">
+		<script src="books.js"></script>
+        <link rel="icon" type="image/png" href="pictures/favicong.png">
+	</head>
+	
+	<body>
+		<div class="header">
+			<h1 id="rec-name"></h1>
+    
+			<div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
+				<div class="back-button">
+					<a href="index.html" class="home-link">BACK TO LIBRARY</a>
+				</div>
+				<details>
+					<summary><img src="pictures/gear.png" width="40px" height="40px"></summary>
+					<div class="settings">
+						<a href="#">Settings</a><hr>
+						<a href="#">Profile</a><hr>
+						<a href="#">Full Book List</a><hr>
+						<a href="#">Log out</a>
+					</div>
+				</details> 
+			</div>
+		</div>
+
+		<div class="main-container">
+			<div class="book">
+				<div class="book-left">
+					<div id="rec-series" class="badge"></div>
+            
+					<div class="book-content-wrapper">
+						<img src="images/percy.jpg" class="book-cover">
+                
+						<div class="book-details-column">
+							<h2 id="rec-book-name" style="margin:0; color: var(--dark-red);"></h2>
+							<p id="rec-author" style="margin:0;"><strong></strong></p>
+							<p id="rec-rating" style="margin:0;"></p>
+							<div style="display: flex; gap: 10px; margin-top: 15px;">
+								<button class="buy-button">BUY NOW</button>
+								<button class="rating-button">RATE</button>
+								<button class="stuff-button">Games & Chats</button>
+								<div id="rec-tags" class="tags"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="book-right">
+					<img src="pictures/Dr.meow/Dr.meow.write.png" style="width: 250px; margin-bottom: 15px; align-self: center;">
+					<div class="summary-bubble">
+						<h3 style="margin-top: 0; color: var(--dark-red);">DR. MEOW'S SUMMARY</h3>
+						<p id="rec-summary"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function getBookIdFromURL() {
+			const params = new URLSearchParams(window.location.search);
+			return params.get('id'); 
+			}
+
+			function loadBookDetails(book) {
+				if (!book) {
+					document.body.innerHTML = "<h1>אופס! הספר לא נמצא</h1><a href='index.html'>חזרה לספרייה</a>";
+					return;
+				}
+
+				document.getElementById('rec-name').innerText = book.title;
+				document.getElementById('rec-book-name').innerText = book.title;
+				document.getElementById('rec-author').innerHTML = "By: " + book.author;
+				document.getElementById('rec-rating').innerText = "Rating: " + book.paws;
+				document.getElementById('rec-summary').innerText = book.summary;
+				document.getElementById('rec-series').innerText = book.series + " series";
+
+				const tagsContainer = document.getElementById('rec-tags');
+				tagsContainer.innerHTML = '';
+				if (book.tags) {
+					book.tags.forEach(tagText => {
+						const tagSpan = document.createElement('span');
+						tagSpan.className = 'tag';
+						tagSpan.innerText = tagText;
+						tagsContainer.appendChild(tagSpan);
+					});
+				}
+			}
+
+
+		window.onload = function() {
+			const id = getBookIdFromURL(); 
+        
+			if (typeof myBooks !== 'undefined' && id !== null) {
+				const selectedBook = myBooks[id]; 
+				loadBookDetails(selectedBook);
+			} else {
+				console.error("Missing ID or myBooks array!");
+			}
+		};
+		
+		window.addEventListener('click', function(e) {
+        const details = document.querySelector('details');
+        if (details.open && !details.contains(e.target)) {
+            details.removeAttribute('open'); 
+        }
+		});
+	</script>
+
+
+	</body>
+</html>
