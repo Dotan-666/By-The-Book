@@ -10,23 +10,62 @@
 	
 	<body>
 		<div class="header">
-			<h1 id="rec-name"></h1>
-    
-			<div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
-				<div class="back-button">
-					<a href="index.html" class="home-link">BACK TO LIBRARY</a>
-				</div>
-				<details>
-					<summary><img src="pictures/gear.png" width="40px" height="40px"></summary>
-					<div class="settings">
-						<a href="#">Settings</a><hr>
-						<a href="#">Profile</a><hr>
-						<a href="#">Full Book List</a><hr>
-						<a href="#">Log out</a>
-					</div>
-				</details> 
-			</div>
-		</div>
+        <table border="0" width="100%" cellspacing="0" style="min-width: 600px;">
+          <tr bgcolor="#941C04" height="150">
+            <td colspan="7" width="70%" style="border-radius: 10px 0 0 0;"><img src="pictures/logo.png" height="150px"></td>
+            <td width="30%" style="text-align: center; vertical-align: middle; padding: 10px; border-radius: 0 15px 0 0">
+            <details style="position: relative; display: inline-block; float: right;">
+                <summary style="background-color: white;
+                color: white; padding: 10px 20px; border-radius: 10px; 
+                cursor: pointer; margin-bottom: 10px; list-style: none; 
+                font-family: Arial, sans-serif; font-weight: bold; width:auto;
+                align:right;">
+                <img src="pictures/gear.png" width="40" height="40">
+                </summary>
+                <div style="position: absolute; top: 100%;
+                    right: 0; background-color: #f9f9f9; min-width: 160px; 
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+                    z-index: 9999; border-radius: 5px; padding: 10px;
+                    text-align: left; border: 1px solid #cccccc;">
+        
+                    <a href="settings.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+			    	text-decoration: none; margin-bottom: 8px; padding: 5px;">Settings</a>
+                    <hr>
+                    <a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Profile</a>
+                    <hr>
+					<a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Upload A Book</a>
+                    <hr>
+                    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
+			        text-decoration: none; padding: 5px;">Full Book List</a>
+			        <hr>
+				    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
+			    	text-decoration: none; padding: 5px;">Log Out</a>
+                </div>
+            </details> 
+            <button type="button" style="background-color: #2F89C2; color: white; border: 1px solid #ffffff; padding: 10px 20px; border-radius: 5px;                 
+		    width: 120px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">       
+            SIGN UP
+            </button>
+            <br> 
+            <button type="button" style="background-color: #ffffff; color: #2F89C2; border: 1px solid #2F89C2; padding: 10px 20px;                     
+	    	border-radius: 5px; width: 120px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">
+            SIGN IN
+            </button></td>
+          </tr>
+          <tr bgcolor="#5E0B00" height="50" style="text-align: center; font-weight: bold; color: white;">
+          <td width="12.4%" style="border-radius: 0 0 0 10px;"><a style="color: white; text-decoration: none; cursor: pointer;">Fantasy</a></td>
+          <td width="12.4%"><a style="color: white; text-decoration: none; cursor: pointer;">Science-Fiction</a></td>
+          <td width="12.4%"><a style="color: white; text-decoration: none; cursor: pointer;">Kids</a></td>
+          <td width="12.4%"><a style="color: white; text-decoration: none; cursor: pointer;">Adults</a></td>
+          <td width="12.4%"><a style="color: white; text-decoration: none; cursor: pointer;">Teenagers</a></td>
+          <td width="12.4%"><a style="color: white; text-decoration: none; cursor: pointer;">Thriller</a></td>
+		   <td width="12.4%"><a href="index.html" style="color: white; text-decoration: none; cursor: pointer;">Home Page</a></td>
+          <td width="12.4%" style="border-radius: 0 0 10px 0;"><a style="color: white; text-decoration: none; cursor: pointer;">Search 🔍</a></td>
+          </tr>
+        </table>
+	</div>
 
 		<div class="main-container">
 			<div class="book">
@@ -34,18 +73,19 @@
 					<div id="rec-series" class="badge"></div>
             
 					<div class="book-content-wrapper">
-						<img src="images/percy.jpg" class="book-cover">
+						<img id="book-image" src="" class="book-cover">
                 
 						<div class="book-details-column">
-							<h2 id="rec-book-name" style="margin:0; color: var(--dark-red);"></h2>
+							<h2 id="rec-book-name" class="title"></h2>
 							<p id="rec-author" style="margin:0;"><strong></strong></p>
 							<p id="rec-rating" style="margin:0;"></p>
 							<div style="display: flex; gap: 10px; margin-top: 15px;">
 								<button class="buy-button">BUY NOW</button>
 								<button class="rating-button">RATE</button>
 								<button class="stuff-button">Games & Chats</button>
-								<div id="rec-tags" class="tags"></div>
 							</div>
+							<strong>Book Tags: </strong>
+							<div id="rec-tags" class="book-tags"></div>
 						</div>
 					</div>
 				</div>
@@ -58,58 +98,138 @@
 					</div>
 				</div>
 			</div>
+			<div id="otherInSeries" class="related-more-box"></div>
+			<div id="relatedBooks" class="related-more-box"></div>
+		</div>
+		<div class="footer">
+			<div class="col-f" style="flex: 1 1 250px;">
+				<strong>Quick Links</strong><br><br>
+				<a href="contact.html">Contact Us</a><br>
+				<a href="about.html">About Us</a><br>
+				<a href="#">Support the Site</a>
+			</div>
+			<div class="col-f" style="flex: 1 1 250px;">
+				<strong>Follow Dr. Meow</strong><br><br>
+				<a href="#">Whatsapp</a> | <a href="#">Youtube</a><br>
+				<a href="#">Facebook</a> | <a href="#">Instagram</a>
+			</div>
+			<div class="col-f" style="flex: 1 1 250px;">
+				<strong>Our Network</strong><br><br>
+				<a href="moovie.html">By The Moovie</a><br>
+				<a href="game.html">By The Game</a>
+			</div>
+		
+			<div style="text-align: center; width: 100%; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+				<p style="font-size: 14px; color: #888;">&copy; 2025 Dotan Hillel. All rights reserved.</p>
+				<p style="font-size: 11px; color: #555;"></p>
+			</div>
 		</div>
 		
 		<script>
 			function getBookIdFromURL() {
-			const params = new URLSearchParams(window.location.search);
-			return params.get('id'); 
-			}
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id'); 
+}
 
-			function loadBookDetails(book) {
-				if (!book) {
-					document.body.innerHTML = "<h1>אופס! הספר לא נמצא</h1><a href='index.html'>חזרה לספרייה</a>";
-					return;
-				}
+function loadBookDetails(book) {
+    if (!book) {
+        document.body.innerHTML = "<h1>Oops! Book not found</h1><a href='index.html'>Back to library</a>";
+        return;
+    }
 
-				document.getElementById('rec-name').innerText = book.title;
-				document.getElementById('rec-book-name').innerText = book.title;
-				document.getElementById('rec-author').innerHTML = "By: " + book.author;
-				document.getElementById('rec-rating').innerText = "Rating: " + book.paws;
-				document.getElementById('rec-summary').innerText = book.summary;
-				document.getElementById('rec-series').innerText = book.series + " series";
+    document.getElementById('rec-book-name').innerText = book.title;
+    document.getElementById('rec-author').innerHTML = "By: " + book.author;
+    document.getElementById('rec-rating').innerText = "Rating: " + book.paws;
+    document.getElementById('rec-summary').innerText = book.summary;
+    document.getElementById('book-image').src = book.image;
 
-				const tagsContainer = document.getElementById('rec-tags');
-				tagsContainer.innerHTML = '';
-				if (book.tags) {
-					book.tags.forEach(tagText => {
-						const tagSpan = document.createElement('span');
-						tagSpan.className = 'tag';
-						tagSpan.innerText = tagText;
-						tagsContainer.appendChild(tagSpan);
-					});
-				}
-			}
+    const seriesElement = document.getElementById('rec-series');
+    if (book.series) {
+        seriesElement.innerText = book.series + " series";
+        seriesElement.style.display = "inline-block"; 
+    } else {
+        seriesElement.style.display = "none"; 
+    }
 
+    const tagsContainer = document.getElementById('rec-tags');
+    tagsContainer.innerHTML = '';
+    if (book.tags) {
+        book.tags.forEach(tagText => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'tag';
+            tagSpan.innerText = tagText;
+            tagsContainer.appendChild(tagSpan);
+        });
+    }
 
-		window.onload = function() {
-			const id = getBookIdFromURL(); 
-        
-			if (typeof myBooks !== 'undefined' && id !== null) {
-				const selectedBook = myBooks[id]; 
-				loadBookDetails(selectedBook);
-			} else {
-				console.error("Missing ID or myBooks array!");
-			}
-		};
-		
-		window.addEventListener('click', function(e) {
-        const details = document.querySelector('details');
-        if (details.open && !details.contains(e.target)) {
-            details.removeAttribute('open'); 
+    const bookId = getBookIdFromURL();
+    const otherInSeriesContainer = document.getElementById('otherInSeries');
+    
+    if (book.series && otherInSeriesContainer) {
+        const seriesMatches = myBooks.filter((b, index) => b.series === book.series && index != bookId);
+        if (seriesMatches.length > 0) {
+            let seriesHtml = `<div style="display: flex; flex-direction: column; width: 100%; align-items: flex-start;"><div style="width: 100%"><span class="abadge">More in the Series</span></div><br>`;
+            seriesHtml += '<div style="display: flex; flex-wrap: wrap; gap: 30px; padding: 20px 0; justify-content: space-between;">';
+            seriesMatches.forEach(sBook => {
+                const originalIndex = myBooks.indexOf(sBook);
+                seriesHtml += `
+                    <div style="text-align: center;">
+                        <a href="book.html?id=${originalIndex}" style="text-decoration: none; color: inherit;">
+                            <img src="${sBook.image}" class="book-img">
+                            <p style="font-weight: bold; margin-top: 10px; font-size: 14px; max-width: 199px;">${sBook.title}</p>
+							<span class="abadge">VIEW BOOK</span>
+                        </a>
+                    </div>`;
+            });
+            seriesHtml += '</div></div>';
+            otherInSeriesContainer.innerHTML = seriesHtml;
         }
-		});
-	</script>
+    }
+
+    const relatedContainer = document.getElementById('relatedBooks');
+    if (relatedContainer && book.tags) {
+        const relatedMatches = myBooks.filter((b, index) => {
+            const hasCommonTag = b.tags && b.tags.some(tag => book.tags.includes(tag));
+            return hasCommonTag && index != bookId && b.series !== book.series;
+        }).slice(0, 5);
+
+        if (relatedMatches.length > 0) {
+            let relatedHtml = `<div style="display: flex; flex-direction: column; width: 100%; align-items: flex-start;"><div style="width: 100%"><span class="abadge">You Might Also Like</span></div><br>`;
+            relatedHtml += '<div style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; justify-content: space-between;">';
+            relatedMatches.forEach(rBook => {
+                const originalIndex = myBooks.indexOf(rBook);
+                relatedHtml += `
+                    <div style="text-align: center;">
+                        <a href="book.html?id=${originalIndex}" style="text-decoration: none; color: inherit;">
+                            <img src="${rBook.image}" class="book-img">
+                            <p style="font-size: 13px; font-weight: bold; margin-top: 8px;">${rBook.title}</p>
+							<span class="abadge">VIEW BOOK</span>
+                        </a>
+                    </div>`;
+            });
+            relatedHtml += '</div></div>';
+            relatedContainer.innerHTML = relatedHtml;
+        }
+    }
+}
+
+window.onload = function() {
+    const id = getBookIdFromURL();
+    if (typeof myBooks !== 'undefined' && id !== null) {
+        const selectedBook = myBooks[id]; 
+        loadBookDetails(selectedBook);
+    } else {
+        console.error("Missing ID or myBooks array!");
+    }
+};
+
+window.addEventListener('click', function(e) {
+    const details = document.querySelector('details');
+    if (details && details.open && !details.contains(e.target)) {
+        details.removeAttribute('open'); 
+    }
+});
+		</script>
 
 
 	</body>
