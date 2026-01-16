@@ -2,23 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="favicong.png">
+	<link rel="stylesheet" href="book-style.css">
+    <link rel="icon" type="image/png" href="pictures/favicong.png">
     <title>By The Book</title>
   </head>
   <body style="margin: 0; padding: 0; background-color: #D4BD87;">
     
 	<div class="header">
-        <table border="0" width="100%" cellspacing="0" style="min-width: 600px;">
+        <table border="0" width="100%" cellspacing="0">
           <tr bgcolor="#941C04" height="150">
-            <td colspan="6" width="70%" style="border-radius: 10px 0 0 0;"><img src="logo.png" height="150px"></td>
-            <td width="30%" style="text-align: center; vertical-align: middle; padding: 10px; border-radius: 0 15px 0 0">
+            <td colspan="6" width="70%" style="border-radius: 10px 0 0 0;"><img src="pictures/logo.png" height="150px"></td>
+            <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px; border-radius: 0 15px 0 0"><div class="auth-buttons">
             <details style="position: relative; display: inline-block; float: right;">
                 <summary style="background-color: white;
                 color: white; padding: 10px 20px; border-radius: 10px; 
                 cursor: pointer; margin-bottom: 10px; list-style: none; 
                 font-family: Arial, sans-serif; font-weight: bold; width:auto;
                 align:right;">
-                <img src="gear.png" width="40" height="40">
+                <img src="pictures/gear.png" width="40" height="40">
                 </summary>
                 <div style="position: absolute; top: 100%;
                     right: 0; background-color: #f9f9f9; min-width: 160px; 
@@ -32,11 +33,14 @@
                     <a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
 			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Profile</a>
                     <hr>
+					<a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
+			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Upload A Book</a>
+                    <hr>
                     <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
 			        text-decoration: none; padding: 5px;">Full Book List</a>
 			        <hr>
 				    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
-			    	text-decoration: none; padding: 5px;">Log out</a>
+			    	text-decoration: none; padding: 5px;">Log Out</a>
                 </div>
             </details> 
             <br> 
@@ -48,7 +52,7 @@
             <button type="button" style="background-color: #ffffff; color: #2F89C2; border: 1px solid #2F89C2; padding: 10px 20px;                     
 	    	border-radius: 5px; width: 120px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">
             SIGN IN
-            </button></td>
+            </button></div></td>
           </tr>
           <tr bgcolor="#5E0B00" height="50" style="text-align: center; font-weight: bold; color: white;">
           <td width="14%" style="border-radius: 0 0 0 10px;"><a style="color: white; text-decoration: none; cursor: pointer;">Fantasy</a></td>
@@ -62,168 +66,6 @@
         </table>
 	</div>
 
-    <style>
-	body{
-	    background-image: url('background.JPEG'); 
-        background-size: cover;    
-        background-position: center; 
-        background-attachment: fixed; 
-        background-repeat: no-repeat;
-	}
-	
-	.header {
-        margin: 20px auto; 
-        max-width: 1200px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-    }
-	
-    .main-container {
-        max-width: 1200px; 
-        margin: 30px auto; 
-        padding: 0 20px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        direction: ltr; 
-    }
-
-    .daily-box {
-        display: flex;
-        background-image: url('divbg.png'); 
-		background-size: cover;    
-        background-position: center; 
-        background-attachment: scroll; 
-        background-repeat: no-repeat;
-		image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        border: 3px solid #5E0B00; 
-        border-radius: 25px; 
-        padding: 35px;
-        align-items: center;
-        gap: 30px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
-    }
-	
-	.popular-new-box{
-	    text-align: left;
-		background-image: url('divbg.png'); 
-		background-size: cover;    
-        background-position: center; 
-        background-attachment: scroll; 
-        background-repeat: no-repeat;
-		image-rendering: -webkit-optimize-contrast; 
-        image-rendering: crisp-edges;
-		border: 3px solid #5E0B00; 
-		border-radius: 20px; 
-		padding: 30px;
-		gap: 20px; 
-		box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-		display: flex; 
-		justify-content: space-around;
-		flex-wrap: wrap; 
-		margin-top: 30px;
-	}
-	
-	.footer{
-	    text-align: center;
-		padding: 40px 20px;
-		background-color: #1a1a1a;
-		color: white;
-		font-size: 16px;
-		font-family: sans-serif;
-		display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 50px;
-	}
-	
-	.footer a {
-        color: white; 
-        text-decoration: none;    
-        transition: 0.3s;         
-    }
-
-    .footer a:hover {      
-        color: #2F89C2;
-        text-decoration: underline; 
-    }
-
-    .book-img {
-        width: 190px;
-		height: 280px; 
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0,0,0,0.3); 
-        transition: transform 0.3s;
-    }
-
-    .book-img:hover {
-        transform: scale(1.05) rotate(-2deg);
-    }
-
-    .badge {
-        background-color: #941C04;
-        color: white;
-        padding: 6px 15px;
-        border-radius: 50px;
-        font-size: 12px;
-        text-transform: uppercase; 
-        letter-spacing: 1px;
-        font-weight: bold;
-        display: inline-block;
-        margin-bottom: 15px;
-    }
-	
-	.col-f{
-		margin: 10px;
-	}
-
-    .rec-btn {
-        background-color: #941C04; 
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 50px; 
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(148, 28, 4, 0.3);
-    }
-
-    .rec-btn:hover {
-        background-color: #5E0B00;
-        transform: translateY(-2px);
-    }
-	
-	.rec-Dr-Meow {
-	    flex: 1; 
-		display: flex; 
-		flex-direction: column; 
-		align-items: center; 
-		gap: 15px;
-        border-left: 1px solid rgba(61, 49, 10, 0.2); 
-        padding-left: 20px;
-	}
-
-    .meow-speech {
-        font-size: 13px;
-        font-style: italic;
-        color: #3D310A;
-        background: rgba(255,255,255,0.4);
-        padding: 15px;
-        border-radius: 15px;
-        border-left: 4px solid #941C04;
-        max-width: 250px;
-    }
-
-    @media (max-width: 850px) {
-        .daily-box {
-            flex-direction: column;
-            text-align: center;
-        }
-        .rec-Dr-Meow { border-left: none; border-top: 1px solid rgba(0,0,0,0.1); padding: 20px 0; }
-    }
-    </style>
-
     <div class="main-container">
         <div class="daily-box">
             <div style="flex-shrink: 0;">
@@ -232,16 +74,16 @@
 
             <div style="flex: 2;">
                 <span class="badge">Daily Recommendation — By Dr. Meow</span>
-                <h2 id="rec-title" style="margin: 10px 0; color: #5E0B00; font-size: 28px;">Loading...</h2>
+                <h2 id="rec-full" style="margin: 10px 0; color: #5E0B00; font-size: 28px;">Loading...</h2>
 				<p id="rec-rating" style="font-size: 18px; margin-bottom: 5px;"></p>
                 <p id="rec-author" style="color: #444; font-style: italic; margin-bottom: 20px; font-size: 18px;"></p>
                 <p id="rec-description" style="color: #444; line-height: 1.7; font-size: 16px; margin-bottom: 25px;"></p>
             
-                <button class="rec-btn" id="rec-link-btn">READ FULL REVIEW</button>
+                <button class="read-review-button" id="rec-link-btn">READ FULL REVIEW</button>
             </div>
 
-            <div class="rec-Dr-Meow">
-			    <img src="Dr.Meow.base.png" style="max-width: 180px; filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));">
+            <div class="Dr-Meow-box">
+			    <img src="pictures/Dr.meow/Dr.Meow.base.png" style="max-width: 180px; filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));">
 			    <div class="meow-speech">
 				    <p><strong>Dr. Meow says:</strong><br>
                     "Unlock my secret library! Sign in and let my whiskers guide you to your next favorite story."</p>
@@ -249,20 +91,11 @@
 			</div>
         </div>
 
-        <div class="popular-new-box">
+        <div class="popular-new-box" id="popular-container">
 		    <div style="width: 100%;"><span class="badge">Most Popular This Week</span></div>
-		    <a href="book.html"><img src="https://m.media-amazon.com/images/I/81XSN3hA5BL.jpg" class="book-img" alt="book"></a>
-		    <a href="book.html"><img src="https://m.media-amazon.com/images/I/71NnUTo9S+L._AC_UF1000,1000_QL80_.jpg" class="book-img" alt="book"></a>
-	        <a href="book.html"><img src="https://m.media-amazon.com/images/I/71X0A8tH9tL._AC_UF1000,1000_QL80_.jpg" class="book-img" alt="book"></a>
-		    <a href="book.html"><img src="https://m.media-amazon.com/images/I/81GeSAt9qhL.jpg" class="book-img" alt="book"></a>
 		</div>
 
-        <div class="popular-new-box">
-		    <div style="width: 100%;"><span class="badge">New on the Shelf</span></div>
-			<a href="book.html"><img src="https://www.e-vrit.co.il/Images/Products/covers_2018/percy_jackson_and_the_lightning_thief_master.jpg" class="book-img"></a>
-			<a href="book.html"><img src="https://m.media-amazon.com/images/I/81Iz693D6XL.jpg" class="book-img"></a>
-			<a href="book.html"><img src="https://m.media-amazon.com/images/I/81m1s4wIPML.jpg" class="book-img"></a>
-			<a href="book.html"><img src="https://m.media-amazon.com/images/I/81WojUxbbFL.jpg" class="book-img"></a>
+        <div class="popular-new-box" id="new-container">
 		</div>
     </div>
 
@@ -286,12 +119,17 @@
 		
 		<div style="text-align: center; width: 100%; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
 		    <p style="font-size: 14px; color: #888;">&copy; 2025 Dotan Hillel. All rights reserved.</p>
-            <p style="font-size: 11px; color: #555;">As an Amazon Associate I earn from qualifying purchases.</p>
+            <p style="font-size: 11px; color: #555;"></p>
 		</div>
 	</div>
+    
+	<script src="books.js"></script>
 
     <script>
-    // סגירת תפריט לחיצה מחוץ לגלגל שיניים
+        console.log(myBooks); 
+        showRandomBook(); 
+    </script>
+    <script>
     window.addEventListener('click', function(e) {
         const details = document.querySelector('details');
         if (details.open && !details.contains(e.target)) {
@@ -299,30 +137,11 @@
         }
     });
 
-    const myBooks = [
-        {
-            title: "The Hitchhiker's Guide",
-            paws: "🐾🐾🐾🐾🐾",
-            author: "Douglas Adams",
-            description: "A hilarious space journey that starts with the destruction of Earth for a galactic bypass. Don't forget your towel!",
-            image: "https://m.media-amazon.com/images/I/81XSN3hA5BL.jpg",
-            link: "galaxy-guide.html"
-        },
-        {
-            title: "The Cat Who Saved Books",
-            paws: "🐾🐾🐾🐾",
-            author: "Sosuke Natsukawa",
-            description: "A young man inherits a bookstore and goes on a mission with a talking cat to save neglected books.",
-            image: "https://m.media-amazon.com/images/I/71NnUTo9S+L._AC_UF1000,1000_QL80_.jpg",
-            link: "cat-books.html"
-        }
-    ];
-
     function showRandomBook() {
         const randomIndex = Math.floor(Math.random() * myBooks.length);
         const book = myBooks[randomIndex];
 
-        document.getElementById('rec-title').innerText = book.title;
+		document.getElementById('rec-full').innerText = book.series + ": " + book.title;
         document.getElementById('rec-author').innerText = "By: " + book.author;
         document.getElementById('rec-description').innerText = book.description;
         document.getElementById('rec-rating').innerText= "Rating: " + book.paws;
@@ -332,11 +151,30 @@
         img.style.display = "block";
 
         document.getElementById('rec-link-btn').onclick = function() {
-            window.location.href = book.link;
-        };
+		window.location.href = "book.html?id=" + randomIndex; 
+		};
     }
 
     document.addEventListener('DOMContentLoaded', showRandomBook);
+	
+	
+	myBooks.forEach((book, index) => {
+		const bookHTML = `
+			<div class="book-item" style="text-align: center; margin: 10px;">
+				<a href="book.html?id=${index}">
+					<img src="${book.image}" class="book-img">
+				</a>
+				<h3 style="font-size: 15px; margin: 10px 0; max-width: 200px;">${book.series}: ${book.title}</h3>
+				<a href="book.html?id=${index}" class="read-review-button" style="padding: 8px 15px; font-size: 12px; text-decoration: none;">VIEW BOOK</a>
+			</div>
+    `	;
+
+		if (book.status === "popular") {
+			document.getElementById('popular-container').innerHTML += bookHTML;
+		} else if (book.status === "new") {
+			document.getElementById('new-container').innerHTML += bookHTML;
+		}
+	});
     </script>
   </body>
 </html>
