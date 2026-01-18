@@ -6,7 +6,7 @@
 
 /* HomePage */
 	body{
-	    background-image: url('pictures/background.JPEG'); 
+	    background-image: url('pictures/background.jpeg'); 
         background-size: cover;    
         background-position: center; 
         background-attachment: fixed; 
@@ -55,7 +55,7 @@
 
     .daily-box {
         display: flex;
-        background-image: url('pictures/divbg.JPG');
+        background-image: url('pictures/divbg.jpg');
 		background-size: cover;    
         background-position: center; 
         background-attachment: scroll; 
@@ -72,7 +72,7 @@
 	
 	.popular-new-box{
 	    text-align: left;
-		background-image: url('pictures/divbg.JPG');
+		background-image: url('pictures/divbg.jpg');
 		background-size: cover;    
         background-position: center; 
         background-attachment: scroll; 
@@ -193,7 +193,7 @@
 body{
 	margin: 0;
     padding: 0;
-    background-image: url('pictures/background.JPEG');
+    background-image: url('pictures/background.jpeg');
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -319,7 +319,7 @@ body{
     overflow: hidden;
     box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     animation: openBook 1.2s ease-out;
-	background-image: url('pictures/divbg.JPG');
+	background-image: url('pictures/divbg.jpg');
 	background-size: cover;    
     background-position: center; 
     background-attachment: scroll; 
@@ -330,7 +330,7 @@ body{
 
 .related-more-box{
 	text-align: left;
-	background-image: url('pictures/divbg.JPG');
+	background-image: url('pictures/divbg.jpg');
 	background-size: cover;    
     background-position: center; 
 	background-attachment: scroll; 
