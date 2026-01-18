@@ -191,7 +191,7 @@ body{
     font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 	
-.header {
+.book-header {
     margin: 20px auto; 
     width: 95%;
     border-radius: 10px;
@@ -199,19 +199,19 @@ body{
 	width: 95%;
 }
 
-.header-actions {
+.book-header-actions {
     display: flex;
     align-items: center;
     gap: 15px; 
 }
 
-.header span{
+.book-header span{
 	background-color: var(--dark-red);
 	box-shadow: 0 4px 10px rgba(148, 28, 4, 0.3);
 	border-radius: 25px;
 }
 
-.title{
+.book-title{
     color: #f1f1f1; 
     font-size: 32px;
     font-weight: 800;
@@ -223,13 +223,13 @@ body{
 	font-family: 'Georgia', serif;
 }
 
-.header details{
+.book-header details{
 	position: relative; 
 	display: inline-block; 
 	float: right;
 }
 
-.header summary{
+.book-header summary{
 	background-color: white;
     padding: 10px 20px; 
 	border-radius: 10px; 
@@ -238,7 +238,7 @@ body{
     width:auto;
 }
 
-.header table {
+.book-header table {
     border-radius: 15px 15px 15px 15px;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -246,7 +246,7 @@ body{
 }
 
 
-.settings{
+.book-settings{
 	position: absolute; 
 	top: 100%;
 	right: 0; 
@@ -262,18 +262,18 @@ body{
 	margin-top: 10px;
 }
 
-.settings a{
+.book-settings a{
 	color: black;
 	text-decoration: none;
 }
 
-.home-link {
+.book-home-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-.back-button{
+.book-back-button{
 	background-color: #333333;
 	width: auto;
 	color: #5E0B00;
@@ -288,21 +288,21 @@ body{
 	max-width: 70px;
 }
 
-.back-button:hover{
+.book-back-button:hover{
 	background-color: var(--dark-red);
 	transform: scale(1.05) rotate(-2deg);
 	box-shadow: 0 4px 5px rgba(30, 60, 84, 0.3);
 	color: #333333;
 }
 
-.main-container{
+.book-main-container{
     margin: 20px auto;
     perspective: 1500px;
 	width: 95%;
 	width: 95%;
 }
 
-.book{
+.book-book-book{
 	display: flex;
     position: relative;
     min-height: 500px;
@@ -320,7 +320,7 @@ body{
     image-rendering: crisp-edges;
 }
 
-.related-more-box{
+.book-related-more-box{
 	text-align: left;
 	background-image: url('pictures/divbg.jpg');
 	background-size: cover;    
@@ -345,7 +345,7 @@ body{
     to { transform: rotateY(0deg) scale(1); opacity: 1; }
 }
 
-.book-left{
+.book-book-left{
 	flex: 2; 
     padding: 30px; 
     display: flex;
@@ -355,7 +355,7 @@ body{
     border-right: 2px solid rgba(94, 11, 0, 0.1);
 }
 
-.book-right{
+.book-book-right{
 	flex: 1;
 	padding: 30px;
 	flex-direction: column;
@@ -363,7 +363,7 @@ body{
 	text-align: left;
 }
 
-.badge {
+.book-badge {
     background: var(--primary-red);
     color: white;
     padding: 8px 20px;
@@ -372,7 +372,7 @@ body{
     margin-bottom: 20px;
 }
 
-.book-img {
+.book-book-img {
 	width: 190px;
 	height: 280px; 
 	object-fit: cover;
@@ -381,11 +381,11 @@ body{
 	transition: transform 0.3s;
 }
 
-.book-img:hover {
+.book-book-img:hover {
 	transform: scale(1.05) rotate(-2deg);
 }
 
-.abadge{
+.book-abadge{
 	background-color: #941C04;
 	color: white;
     padding: 6px 15px;
@@ -398,12 +398,12 @@ body{
 	margin-bottom: 15px;
 }
 
-.abadge:hover {
+.book-abadge:hover {
 	background-color: #5E0B00;
     transform: translateY(-2px);
     }
 
-.book-cover {
+.book-book-cover {
     width: 250px;
     height: 350px;
     object-fit: cover;
@@ -411,11 +411,11 @@ body{
     box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
 }
 
-.book-cover:hover{
+.book-book-cover:hover{
 	transform: scale(1.05) rotate(-2deg);
 }
 
-.buy-button{
+.book-buy-button{
 	background-color: var(--primary-red);
     border: none; 
 	padding: 10px 20px; 
@@ -424,12 +424,12 @@ body{
 	color: white;
 }
 
-.buy-button:hover{
+.book-buy-button:hover{
 	background-color: var(--dark-red);
 	color: black;
 }
 
-.rating-button{
+.book-rating-button{
 	background-color: var(--dark-red);
 	color: black;
     border: none; 
@@ -438,25 +438,25 @@ body{
 	cursor: pointer;
 }
 
-.rating-button:hover{
+.book-rating-button:hover{
 	background-color: var(--primary-red);
 	color: white;
 }
 
-.book-content-wrapper {
+.book-book-content-wrapper {
     display: flex; 
     flex-direction: row;
     gap: 25px;
     align-items: flex-start;
 }
 
-.book-details-column {
+.book-book-details-column {
     display: flex;
     flex-direction: column; 
     gap: 12px;
 }
 
-.summary-bubble {
+.book-summary-bubble {
     background: rgba(245, 245, 245, 0.2); 
     padding: 25px;
     border-radius: 15px;
@@ -467,7 +467,7 @@ body{
     line-height: 1.6;
 }
 
-.stuff-button{
+.book-stuff-button{
 	background-color:var(--primary-red);
 	color: white;
 	cursor: pointer;
@@ -476,18 +476,18 @@ body{
 	border: none;
 }
 
-.stuff-button:hover{
+.book-stuff-button:hover{
 	background-color: var(--dark-red);
 }
 
-.book-tags {
+.book-book-tags {
     display: flex;
     flex-wrap: nowrap; 
     gap: 8px;      
     margin: 10px 8px;
 }
 
-.tag {
+.book-tag {
     background-color: rgba(47, 137, 194, 0.1);
     color: var(--action-blue);               
     border: 1px solid var(--action-blue);   
@@ -499,17 +499,17 @@ body{
     transition: 0.3s ease;                 
 }
 
-.tag:hover {
+.book-tag:hover {
     background-color: var(--action-blue);
     color: white;
     transform: translateY(-2px); 
 }
 
-.col-f{
+.book-col-f{
 		margin: 10px;
 	}
 	
-.footer{
+.book-footer{
 	    text-align: center;
 		padding: 40px 20px;
 		background-color: #1a1a1a;
@@ -522,13 +522,13 @@ body{
         margin-top: 50px;
 	}
 	
-.footer a {
+.book-footer a {
     color: white; 
 	text-decoration: none;    
     transition: 0.3s;         
     }
 
-.footer a:hover {      
+.book-footer a:hover {      
 	color: #2F89C2;
 	text-decoration: underline; 
 }
