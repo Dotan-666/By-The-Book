@@ -15,8 +15,7 @@
 	
 	.header {
         margin: 20px auto; 
-        width: 95%;
-        border-radius: 10px;
+        width: 100%;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 		table-layout: fixed;
     }
@@ -32,10 +31,8 @@
 	}
 	
 	.header table {
-		border-radius: 15px 15px 15px 15px;
 		border-collapse: separate;
 		border-spacing: 0;
-		overflow: hidden;
 	}
 
 
@@ -46,8 +43,7 @@
 	}
 	
     .main-container {
-        width: 95%; 
-        margin: 30px auto; 
+        width: 100%; 
         padding: 0 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         direction: ltr; 
@@ -55,15 +51,12 @@
 
     .daily-box {
         display: flex;
-        background-image: url('pictures/divbg.jpg');
-		background-size: cover;    
-        background-position: center; 
-        background-attachment: scroll; 
-        background-repeat: no-repeat;
-		image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
+        background: #ffffff;
+		background-image: radial-gradient(at 0% 0%, rgba(200,200,200,0.2) 0, transparent 50%), 
+		linear-gradient(130deg, transparent 40%, #e0e0e0 45%, transparent 50%),
+		linear-gradient(60deg, transparent 45%, #dcdcdc 50%, transparent 55%);
+		background-size: 100% 100%, 400px 600px, 500px 500px;
         border: 3px solid #5E0B00; 
-        border-radius: 25px; 
         padding: 35px;
         align-items: center;
         gap: 30px;
@@ -80,7 +73,6 @@
 		image-rendering: -webkit-optimize-contrast; 
         image-rendering: crisp-edges;
 		border: 3px solid #5E0B00; 
-		border-radius: 20px; 
 		padding: 30px;
 		gap: 20px; 
 		box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
