@@ -2,7 +2,7 @@
 <html>
     <head>
 	    <title>By The Book|Book Details</title>
-		<link rel="stylesheet" href="book-style.css">
+		<link rel="stylesheet" href="ex-book-style.css">
 		<meta charset="UTF-8">
 		<script src="books.js"></script>
         <link rel="icon" type="image/png" href="pictures/favicong.png">
@@ -202,7 +202,7 @@ function loadBookDetails(book) {
                     <div style="text-align: center;">
                         <a href="book.html?id=${originalIndex}" style="text-decoration: none; color: inherit;">
                             <img src="${rBook.image}" class="book-img">
-                            <p style="font-size: 13px; font-weight: bold; margin-top: 8px;">${rBook.title}</p>
+                            <p style="font-size: 13px; font-weight: bold; margin-top: 8px; max-width: 199px;">${rBook.title}</p>
 							<span class="abadge">VIEW BOOK</span>
                         </a>
                     </div>`;

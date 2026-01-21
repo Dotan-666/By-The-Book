@@ -2,24 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" href="book-style.css">
+	<link rel="stylesheet" href="ex-book-style.css">
     <link rel="icon" type="image/png" href="pictures/favicong.png">
     <title>By The Book</title>
   </head>
-  <body style="margin: 0; padding: 0; background-color: #D4BD87;">
+  <body style="margin: 0; padding: 0;">
     
 	<div class="header">
         <table border="0" width="100%" cellspacing="0">
           <tr bgcolor="#941C04" height="150">
-            <td colspan="6" width="70%" style="border-radius: 15px 0 0 0;"><img src="pictures/logo.png" height="150px"></td>
-            <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px; border-radius: 0 15px 0 0"><div class="auth-buttons">
-            <div style="display: flex; flex-direction: column; align-items: flex-end;"><details style="display: inline-block;">
-                <summary style="background-color: white;
-                color: white; padding: 10px 20px; border-radius: 10px; 
-                cursor: pointer; margin-bottom: 10px; list-style: none; 
+            <td colspan="6" width="70%"><img src="pictures/logo.png" height="150px"></td>
+            <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px;"><div class="auth-buttons">
+            <div style="display: flex; flex-direction: column; align-items: flex-end;">  
+            <button type="button" style="background-color: #2F89C2; color: white; border: 1px solid #ffffff; padding: 10px 20px; border-radius: 5px;                 
+		    width: 150px; cursor: pointer; font-family: Arial; font-weight: bold; float: right; height: 50px; font-size: 20px;">       
+            SIGN UP
+            </button> 
+            <button type="button" style="background-color: #ffffff; color: #2F89C2; border: 1px solid #2F89C2; padding: 10px 20px;                     
+	    	border-radius: 5px; width: 150px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right; height: 50px; font-size: 20px;">
+            SIGN IN
+            </button></div></td>
+          </tr>
+          <tr bgcolor="#5E0B00" height="50" style="text-align: center; font-weight: bold; color: white;">
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Fantasy</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Science-Fiction</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Kids</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Adults</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Teenagers</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Thriller</a></td>
+          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Search 🔍</a></td>
+          </tr>
+        </table>
+	</div>
+
+    <div class="main-container">
+		<aside class="barrier"> 
+			<details style="display: inline-block;">
+                <summary style="cursor: pointer; margin-bottom: 10px; list-style: none; 
                 font-family: Arial, sans-serif; font-weight: bold; width:auto;
                 align: right;">
-                <img src="pictures/gear.png" width="40px" height="40px">
+                <img src="pictures/gear.png" width="60px" height="60px">
                 </summary>
                 <div style="position: fixed; top: 100%;
                     right: 0; background-color: #f9f9f9; min-width: 160px; 
@@ -42,59 +64,44 @@
 				    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
 			    	text-decoration: none; padding: 5px;">Log Out</a>
                 </div>
-            </details>  
-            <button type="button" style="background-color: #2F89C2; color: white; border: 1px solid #ffffff; padding: 10px 20px; border-radius: 5px;                 
-		    width: 120px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">       
-            SIGN UP
-            </button> 
-            <button type="button" style="background-color: #ffffff; color: #2F89C2; border: 1px solid #2F89C2; padding: 10px 20px;                     
-	    	border-radius: 5px; width: 120px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right;">
-            SIGN IN
-            </button></div></td>
-          </tr>
-          <tr bgcolor="#5E0B00" height="50" style="text-align: center; font-weight: bold; color: white;">
-          <td width="14%" style="border-radius: 0 0 0 10px;"><a style="color: white; text-decoration: none; cursor: pointer;">Fantasy</a></td>
-          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Science-Fiction</a></td>
-          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Kids</a></td>
-          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Adults</a></td>
-          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Teenagers</a></td>
-          <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Thriller</a></td>
-          <td width="14%" style="border-radius: 0 0 10px 0;"><a style="color: white; text-decoration: none; cursor: pointer;">Search 🔍</a></td>
-          </tr>
-        </table>
-	</div>
-
-    <div class="main-container">
+            </details>
+		</aside>
+	    <div>
+		<main class="site-info">
         <div class="daily-box">
             <div style="flex-shrink: 0;">
                 <img id="rec-img" src="" alt="Book Cover" class="book-img" style="display: none;">
             </div>
 
-            <div style="flex: 2;">
-                <span class="badge">Daily Recommendation — By Dr. Meow</span>
-                <h2 id="rec-full" style="margin: 10px 0; color: #5E0B00; font-size: 28px;">Loading...</h2>
-				<p id="rec-rating" style="font-size: 18px; margin-bottom: 5px;"></p>
-                <p id="rec-author" style="color: #444; font-style: italic; margin-bottom: 20px; font-size: 18px;"></p>
-                <p id="rec-description" style="color: #444; line-height: 1.7; font-size: 16px; margin-bottom: 25px;"></p>
+            <div style="flex: 2; padding-top: 50px;">
+                <span class="daily-badge">Daily Recommendation — By Dr. Meow</span>
+                <h2 id="rec-full" style="margin: 10px 0; color: #555555; font-size: 28px; margin-top: 30px;">Loading...</h2>
+				<p id="rec-rating" style="font-size: 18px; margin-bottom: 5px; color: #555555;"></p>
+                <p id="rec-author" style="color: #555555; font-style: italic; margin-bottom: 20px; font-size: 18px;"></p>
+                <p id="rec-description" style="color: #555555; line-height: 1.7; font-size: 16px; margin-bottom: 25px;"></p>
             
-                <button class="read-review-button" id="rec-link-btn">READ FULL REVIEW</button>
+                <button style="color: #444444; background-color: #f0f0f0; padding: 8px 20px; border-radius: 50px; font-weight: bold; margin-bottom: 40px; cursor: pointer;" id="rec-link-btn">
+				READ FULL REVIEW</button>
             </div>
 
             <div class="Dr-Meow-box">
 			    <img src="pictures/Dr.meow/Dr.Meow.base.png" style="max-width: 180px; filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));">
 			    <div class="meow-speech">
-				    <p><strong>Dr. Meow says:</strong><br>
+				    <p style="color: #555555;"><strong>Dr. Meow says:</strong><br>
                     "Unlock my secret library! Sign in and let my whiskers guide you to your next favorite story."</p>
 			    </div>
 			</div>
         </div>
 
-        <div class="popular-new-box" id="popular-container">
-		    <div style="width: 100%;"><span class="badge">Most Popular This Week</span></div>
+			<div class="popular-new-box" id="popular-container">
+				<div style="width: 100%;"><span class="badge">Most Popular This Week</span></div>
+			</div>
+			
+			<div class="popular-new-box" id="new-container">
+				<div style="width: 100%;"><span class="badge">You Might Also Like</span></div>
+			</div>
 		</div>
-
-        <div class="popular-new-box" id="new-container">
-		</div>
+		</main>
     </div>
 
     <div class="footer">
@@ -115,7 +122,8 @@
 			<a href="game.html">By The Game</a>
 		</div>
 		
-		<div style="text-align: center; width: 100%; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+		<div style="text-align: center; width: 100%; margin-top: 10px; border-top: 1px solid #333; padding-top: 20px;">
+			<hr color="#2c2c2c" width="90%">
 		    <p style="font-size: 14px; color: #888;">&copy; 2025 Dotan Hillel. All rights reserved.</p>
             <p style="font-size: 11px; color: #555;"></p>
 		</div>
@@ -161,7 +169,7 @@
 				<a href="book.html?id=${index}">
 					<img src="${book.image}" class="book-img">
 				</a>
-				<h3 style="font-size: 15px; margin: 10px 0; max-width: 200px;">${book.series}: ${book.title}</h3>
+				<h3 style="font-size: 15px; margin: 10px 0; max-width: 200px; color: #555555;">${book.series}: ${book.title}</h3>
 				<a href="book.html?id=${index}" class="read-review-button" style="padding: 8px 15px; font-size: 12px; text-decoration: none;">VIEW BOOK</a>
 			</div>
     `	;
