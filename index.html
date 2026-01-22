@@ -2,9 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" href="ex-book-style.css">
+	<link rel="stylesheet" href="index-style.css">
     <link rel="icon" type="image/png" href="pictures/favicong.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>By The Book</title>
+	<meta name="description" content="Discover your next favorite story with Dr. Meow! Join By The Book for daily recommendations, a gamified reading experience, and the chance to earn 'Mice' for free books.">
+	<meta name="keywords" content="books, book recommendations, Dr. Meow, Percy Jackson, reading community, earn books, book tracker">
+	<meta name="author" content="Dotan Hillel">
+	<meta property="og:title" content="By The Book | Daily Book Recommendations">
+	<meta property="og:description" content="Let Dr. Meow guide your reading journey. Earn rewards while discovering great books!">
+	<meta property="og:image" content="https://Dotan-666.github.io/By-The-Book/assets/dr-meow-share.jpg"> 
+	<meta property="og:url" content="https://Dotan-666.github.io/By-The-Book/index.html">
+	<meta name="twitter:card" content="summary_large_image">
   </head>
   <body style="margin: 0; padding: 0;">
     
@@ -12,14 +21,12 @@
         <table border="0" width="100%" cellspacing="0">
           <tr bgcolor="#941C04" height="150">
             <td colspan="6" width="70%"><img src="pictures/logo.png" height="150px"></td>
-            <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px;"><div class="auth-buttons">
+            <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px; padding-left: 120px;"><div class="header-actions">
             <div style="display: flex; flex-direction: column; align-items: flex-end;">  
-            <button type="button" style="background-color: #2F89C2; color: white; border: 2px solid #ffffff; padding: 10px 20px; border-radius: 10px;                 
-		    width: 130px; cursor: pointer; font-family: Arial; font-weight: bold; float: right; height: 40px; font-size: 20px;">       
+            <button type="button" class="sign-up">       
             SIGN UP
             </button> 
-            <button type="button" style="background-color: #ffffff; color: #2F89C2; border: 2px solid #2F89C2; padding: 10px 20px;                     
-	    	border-radius: 10px; width: 130px; margin-top: 8px; cursor: pointer; font-family: Arial; font-weight: bold; float: right; height: 40px; font-size: 20px;">
+            <button type="button" class="sign-in">
             SIGN IN
             </button></div></td>
           </tr>
@@ -37,34 +44,45 @@
 
     <div class="main-container">
 		<aside class="barrier"> 
-			<details style="display: inline-block;">
-                <summary style="cursor: pointer; margin-bottom: 10px; list-style: none; 
-                font-family: Arial, sans-serif; font-weight: bold; width:auto;
-                align: right;">
-                <img src="pictures/gear.png" width="60px" height="60px">
-                </summary>
-                <div style="position: fixed; top: 100%;
-                    right: 0; background-color: #f9f9f9; min-width: 160px; 
-                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
-                    z-index: 9999; border-radius: 5px; padding: 10px;
-                    text-align: left; border: 1px solid #cccccc;">
-        
-                    <a href="settings.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
-			    	text-decoration: none; margin-bottom: 8px; padding: 5px;">Settings</a>
-                    <hr>
-                    <a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
-			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Profile</a>
-                    <hr>
-					<a href="about.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                   
-			     	text-decoration: none; margin-bottom: 8px; padding:5px;">Upload A Book</a>
-                    <hr>
-                    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
-			        text-decoration: none; padding: 5px;">Full Book List</a>
-			        <hr>
-				    <a href="contact.html" onclick="this.parentElement.parentElement.removeAttribute('open')" style="display: block; color: black;                 
-			    	text-decoration: none; padding: 5px;">Log Out</a>
-                </div>
-            </details>
+			<div class="side-item">
+				<i class="fa-solid fa-book"></i>
+				<span>Main Library</span>
+			</div>
+    
+			<div class="side-item">
+				<i class="fa-solid fa-user"></i>
+				<span>My Profile</span>
+			</div>
+    
+			<div class="side-item">
+				<i class="fa-solid fa-bookmark"></i>
+				<span>My Bookshelf</span>
+			</div>
+    
+			<div class="side-item">
+				<i class="fa-regular fa-comments"></i>
+				<span>Chats & Community</span>
+			</div>
+			
+			<div class="side-item">
+				<i class="fa-solid fa-newspaper"></i>
+				<span>News & Updates</span>
+			</div>
+		
+			<div class="side-item">
+				<i class="fa-solid fa-upload"></i>
+				<span>Upload A Book</span>
+			</div>
+    
+			<div class="side-item">
+				<i class="fa-solid fa-list"></i>
+				<span>Full Book List</span>
+			</div>
+			
+			<div class="side-item">
+				<i class="fa-solid fa-gear"></i>
+				<span>Settings</span>
+			</div>
 		</aside>
 	    <div>
 		<main class="site-info">
