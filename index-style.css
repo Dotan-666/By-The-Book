@@ -43,27 +43,14 @@
 		box-shadow: 0 15px 10px rgba(0,0,0,0.2);
 	}
 	
-	.sign-up{
-		background-color: var(--action-blue);
-		color: white;
-		border: 2px solid white; 
-		padding: 10px 20px;
-		border-radius: 8px;
-		font-weight: bold;
-		min-width: 120px; 
-		cursor: pointer;
-		transition: 0.3s;
-		margin-bottom: 10px;
-	}
-	
 	.sign-in{
 		background-color: white;
 		color: var(--action-blue);
 		border: 2px solid var(--action-blue); 
 		padding: 10px 20px;
-		border-radius: 8px;
+		border-radius: 10px;
 		font-weight: bold;
-		min-width: 120px; 
+		min-width: 150px; 
 		cursor: pointer;
 		transition: 0.3s;
 		margin-bottom: 10px;
@@ -110,7 +97,17 @@
 		transition: all 0.3s ease;
 	}
 	
-	.side-item i{
+	.side-item-active{
+		display: flex;
+		align-items: center;
+		padding: 12px 20px;
+		gap: 15px; 
+		transition: all 0.3s ease;
+		background-color: rgba(30, 30, 30, 0.95);
+		border-left: 4px solid #777777;
+	}
+	
+	.side-item i, .side-item-active i{
 		color: #777777; 
 		font-size: 18px; 
 		width: 25px;    
@@ -120,7 +117,7 @@
 		margin-top: 17px;
 	}
 	
-	.side-item span {
+	.side-item span, .side-item-active span {
 		color: #777777; 
 		font-size: 15px;
 		font-weight: bold;
@@ -209,6 +206,113 @@
 		font-weight: bold;
 		margin-bottom: 20px;
 	}
+	
+	.abadge{
+		background-color: #941C04;
+		color: white;
+		padding: 6px 15px;
+		border-radius: 50px;
+		font-size: 12px;
+		text-transform: uppercase; 
+		letter-spacing: 1px;
+		font-weight: bold;
+		display: inline-block;
+		margin-bottom: 15px;
+	}
+
+	.abadge:hover {
+		background-color: #5E0B00;
+		transform: translateY(-2px);
+	}
+	
+	.auth-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.account-btn {
+    background: #941C04;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+	float: top;
+	margin-bottom: 15px;
+}
+
+.auth-tooltip {
+    display: none; 
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.auth-tooltip h3 {
+    color: #5E0B00;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.tooltip-option {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.tooltip-option:hover {
+	background: #f9f9f9; 
+	border-color: #941C04; 
+}
+
+.separator {
+    text-align: center;
+    margin: 10px 0;
+    position: relative;
+}
+.separator span {
+	background: white; 
+	padding: 0 10px; 
+	color: #aaa; 
+	font-size: 12px; 	
+}
+
+.close-tooltip {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    cursor: pointer;
+    line-height: 1;
+    transition: 0.2s;
+	margin-bottom: 15px;
+	border-radius: 50px;
+}
+
+.close-tooltip:hover {
+    background-color: #eeeeee;
+}
 
     .book-img {
         width: 190px;

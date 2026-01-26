@@ -16,19 +16,38 @@
 	<meta name="twitter:card" content="summary_large_image">
   </head>
   <body style="margin: 0; padding: 0;">
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
     
 	<div class="header">
         <table border="0" width="100%" cellspacing="0">
           <tr bgcolor="#941C04" height="150">
             <td colspan="6" width="70%"><img src="pictures/logo.png" height="150px"></td>
             <td colspan="1" width="30%" style="text-align: center; vertical-align: middle; padding: 10px; padding-left: 120px;"><div class="header-actions">
-            <div style="display: flex; flex-direction: column; align-items: flex-end;">  
-            <button type="button" class="sign-up">       
-            SIGN UP
-            </button> 
-            <button type="button" class="sign-in">
-            SIGN IN
-            </button></div></td>
+            <div class="auth-wrapper">
+				<button type="button" class="account-btn">
+					<i class="fa-solid fa-circle-user"></i> GUEST MODE
+				</button>
+				<button type="button" class="sign-in" onclick="toggleAuthTooltip(event)">
+					SIGN IN
+				</button>
+
+				<div id="authTooltip" class="auth-tooltip">
+					<span class="close-tooltip" onclick="toggleAuthTooltip(event)"> &times; </span>
+					<div class="tooltip-arrow"></div>
+					<h3>Join the Club 🐾</h3>
+        
+					<button class="tooltip-option google" onclick="loginWithGoogle()">
+						<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="16">
+						Google Sign-in
+					</button>
+
+					<div class="separator"><span>or</span></div>
+
+					<button class="tooltip-option email" onclick="location.href='login.html'">
+						<i class="fa-solid fa-envelope"></i> Email / Password
+					</button>
+				</div>
+			</div></td>
           </tr>
           <tr bgcolor="#5E0B00" height="50" style="text-align: center; font-weight: bold; color: white;">
           <td width="14%"><a style="color: white; text-decoration: none; cursor: pointer;">Fantasy</a></td>
@@ -44,7 +63,7 @@
 
     <div class="main-container">
 		<aside class="barrier"> 
-			<div class="side-item">
+			<div class="side-item-active">
 				<i class="fa-solid fa-book"></i>
 				<span>Main Library</span>
 			</div>
@@ -97,7 +116,13 @@
 				<p id="rec-rating" style="font-size: 18px; margin-bottom: 5px; color: #555555;"></p>
                 <p id="rec-author" style="color: #555555; font-style: italic; margin-bottom: 20px; font-size: 18px;"></p>
                 <p id="rec-description" style="color: #555555; line-height: 1.7; font-size: 16px; margin-bottom: 25px;"></p>
-            
+				
+				<style>
+					#rec-link-btn:hover{
+						color: #777777;
+						transform: scale(1.05);
+					}
+				</style>
                 <button style="color: #444444; background-color: #f0f0f0; padding: 8px 20px; border-radius: 50px; font-weight: bold; margin-bottom: 40px; cursor: pointer;" id="rec-link-btn">
 				READ FULL REVIEW</button>
             </div>
@@ -146,58 +171,103 @@
             <p style="font-size: 11px; color: #555;"></p>
 		</div>
 	</div>
-    
-	<script src="books.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
     <script>
-        console.log(myBooks); 
-        showRandomBook(); 
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVC-CQK_umSHnPT5FOvvclut_WN2Ll0to",
+            authDomain: "by-the-book-3120c.firebaseapp.com",
+            projectId: "by-the-book-3120c",
+            storageBucket: "by-the-book-3120c.firebasestorage.app",
+            messagingSenderId: "795787841752",
+            appId: "1:795787841752:web:52b7657d0ffe31739847ad",
+            measurementId: "G-7EC8YT427C"
+        };
 
-    window.addEventListener('click', function(e) {
-        const details = document.querySelector('details');
-        if (details.open && !details.contains(e.target)) {
-            details.removeAttribute('open'); 
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        async function loadSiteData() {
+            try {
+                const snapshot = await db.collection("books").get();
+                const allBooks = [];
+                
+                snapshot.forEach(doc => {
+                    allBooks.push({ id: doc.id, ...doc.data() });
+                });
+
+                if (allBooks.length > 0) {
+                    showRandomBook(allBooks);
+                    displayBooksByCategory(allBooks);
+                }
+            } catch (error) {
+                console.error("Error loading cloud data:", error);
+            }
         }
-    });
+		
+        function showRandomBook(books) {
+            const randomIndex = Math.floor(Math.random() * books.length);
+            const book = books[randomIndex];
 
-    function showRandomBook() {
-        const randomIndex = Math.floor(Math.random() * myBooks.length);
-        const book = myBooks[randomIndex];
+            document.getElementById('rec-full').innerText = (book.series || "") + ": " + book.title;
+            document.getElementById('rec-author').innerText = "By: " + book.author;
+            document.getElementById('rec-description').innerText = book.description;
+            document.getElementById('rec-rating').innerText = "Rating: " + book.paws;
+        
+            const img = document.getElementById('rec-img');
+            img.src = book.image;
+            img.style.display = "block";
 
-		document.getElementById('rec-full').innerText = book.series + ": " + book.title;
-        document.getElementById('rec-author').innerText = "By: " + book.author;
-        document.getElementById('rec-description').innerText = book.description;
-        document.getElementById('rec-rating').innerText= "Rating: " + book.paws;
-    
-        const img = document.getElementById('rec-img');
-        img.src = book.image;
-        img.style.display = "block";
+            document.getElementById('rec-link-btn').onclick = function() {
+                window.location.href = "book.html?id=" + book.id; 
+            };
+        }
 
-        document.getElementById('rec-link-btn').onclick = function() {
-		window.location.href = "book.html?id=" + randomIndex; 
-		};
-    }
+        function displayBooksByCategory(books) {
+            const popularContainer = document.getElementById('popular-container');
+            const newContainer = document.getElementById('new-container');
 
-    document.addEventListener('DOMContentLoaded', showRandomBook);
-	
-	
-	myBooks.forEach((book, index) => {
-		const bookHTML = `
-			<div class="book-item" style="text-align: center; margin: 10px;">
-				<a href="book.html?id=${index}">
-					<img src="${book.image}" class="book-img">
-				</a>
-				<h3 style="font-size: 15px; margin: 10px 0; max-width: 200px; color: #555555;">${book.series}: ${book.title}</h3>
-				<a href="book.html?id=${index}" class="read-review-button" style="padding: 8px 15px; font-size: 12px; text-decoration: none;">VIEW BOOK</a>
-			</div>
-    `	;
+            books.forEach((book) => {
+                const bookHTML = `
+                    <div class="book-item" style="text-align: center; margin: 10px;">
+                        <a href="book.html?id=${book.id}">
+                            <img src="${book.image}" class="book-img">
+                        </a>
+                        <h3 style="font-size: 15px; margin: 10px 0; max-width: 200px; color: #555555;">
+                            ${book.series ? book.series + ': ' : ''}${book.title}
+                        </h3>
+                        <a href="book.html?id=${book.id}" class="abadge" style="padding: 8px 15px; font-size: 12px; text-decoration: none;">VIEW BOOK</a>
+                    </div>
+                `;
 
-		if (book.status === "popular") {
-			document.getElementById('popular-container').innerHTML += bookHTML;
-		} else if (book.status === "new") {
-			document.getElementById('new-container').innerHTML += bookHTML;
+                if (book.status === "popular") {
+                    popularContainer.innerHTML += bookHTML;
+                } else if (book.status === "new") {
+                    newContainer.innerHTML += bookHTML;
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadSiteData);
+		
+		function toggleAuthTooltip(event) {
+			event.stopPropagation(); 
+			const tooltip = document.getElementById('authTooltip');
+			tooltip.style.display = (tooltip.style.display === 'block') ? 'none' : 'block';
 		}
-	});
+
+		window.onclick = function() {
+			document.getElementById('authTooltip').style.display = 'none';
+		};
+
+        window.addEventListener('click', function(e) {
+            const details = document.querySelector('details');
+            if (details && details.open && !details.contains(e.target)) {
+                details.removeAttribute('open'); 
+            }
+        });
     </script>
   </body>
 </html>
